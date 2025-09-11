@@ -6,7 +6,8 @@ def main():
     img = cv2.imread("/home/enoconda/Desktop/DIP/Image/img1.png", 0)
     
     # ---- Apply Canny Edge Detection ----
-    edges = cv2.Canny(img, threshold1=100, threshold2=200)
+    img_blur = cv2.GaussianBlur(img, (5,5), 1.5)
+    edges = cv2.Canny(img_blur, threshold1=100, threshold2=200)
     
     # ---- Display Results ----
     plt.figure(figsize=(10,5))
